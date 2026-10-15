@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../common/style.css">
+</head>
+  <body>
+  <header id = "header"></header>
+  <main class="container">
+    <article class="post">
+      <div id="title"></div>
+      <div class="post-content">
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ブログタイトル - All rights reserved.
+  </footer>
+  <script src="../article.js"></script>
+  <script>
+    fetch("../common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("../common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+      getTitle(2)
+  </script>
+</body>
+</html>
