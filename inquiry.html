@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="common/style.css">
+</head>
+<body>
+  <header id = "header"></header>
+  <main class="container">
+    <article class="post">
+      <div class="post-content">
+        <p>TwitterのDMで受け付けております</p>
+        <p>Twitter：<span onclick="location.href='https://x.com/YakiMoyashi'">x.com/YakiMoyashi</span></p>
+      </div>
+    </article>
+  </main>
+  <script>
+    fetch("common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML += html;
+      });
+    
+  </script>
+</body>
+</html>
