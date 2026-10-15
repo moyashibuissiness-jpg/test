@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../common/style.css">
+</head>
+  <body>
+  <header id = "header"></header>
+  <main class="container">
+    <!-- 記事１ -->
+    <article class="post">
+      <div id="title"></div>
+      <div class="post-content">
+        <h2>1.まずはダウンロード</h2>
+        <p>こちらからダウンロードしてください。</p>
+        <p>サイズは60Mくらいです。</p>    
+        <p>アプリケーションはPYTHONで動きますが、</p>
+        <p><strong>PYTHONやライブラリのインストールや環境設定は必要ありません。</strong></p>
+        <p>すべて内包してあります。</p>
+        <br>
+        <h2>2.</h2>
+
+        <br>
+      
+        <h2>3.店舗取得一覧テーブルから店舗一覧を取得しよう</h2>
+        <img src="img/003_01.png" width="50%" height="auto"style="object-fit: cover; /* ← 一番よく使う */">
+        <p>店舗一覧取得ボタンを押下</p>
+        <img>
+        <br>
+      </div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ブログタイトル - All rights reserved.
+  </footer>
+  <script src="../article.js"></script>
+  <script>
+    fetch("../common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("../common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+      getTitle(3)
+  </script>
+</body>
+</html>
