@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../common/style.css">
+</head>
+  <body>
+  <header id = "header"></header>
+  <main class="container">
+    <article class="post">
+      <div id="title"></div>
+      <div class="post-content">
+        <p>毎日ホールのデータをチェックして、エクセルにコピペしている友達を見て、</p>
+        <p>「この作業、自動化できそうだなぁ…」と思ったので、調べながら作ってみました。</p>
+        <p>その過程をここに記しておきます。</p>
+        <p><strong>➤具体的なコード的な解説はこちら</strong></p>
+        <p><strong>➤使い方・ダウンロードはこちら</strong></p>
+        <br>
+        <h3>・使ったもの</h3>
+        <p>言語：<strong style="color:blue">PYTHON</strong></p>
+        <p>ライブラリ系</p>
+        <p>・スクレイプツール：<strong>undetected_chromedriver</strong></p>
+        <p>・要素抽出：<strong>BeautifulSoup</strong></p>
+        <p>・データベース：<strong>Sqlite3</strong></p>
+        <p>・データ分析：<strong>pandas、matplotlib</strong></p>
+        <br>
+      
+        <h3>第一章 / スクレイピング・JAVAとの別れ</h3>
+        <p>「よっしゃあ作るぞ！」となって一番慣れ親しんだ<strong>JAVA</strong>で開発を始めました。</p>
+        <p>最初に作るべき機能は、スクレイピングです。</p>
+        <p>ウェブサイトからHTML文を取得してくる作業のことですね。</p>
+        <p>しかし、ある程度進めたところで気づきます。</p>
+        <p>__なんか通信ブロックされてないか？__</p>
+        <p>そう、最初<strong>Selenium</strong>というツールを使用して、スクレイピングをしていましたが、</p>
+        <p>どうやら<span style="color:red">サーバー側のBotチェックに引っかかり、データが取得できない</span>と気付きました。(泣)</p>
+        <p>(CloudflareというBotチェックソフトらしい)</p>
+        <br>
+        <p>調査をしていると、PYTHONに<strong>undetected‑chromedriver</strong>というライブラリが存在することを発見。</p>
+        <p>これを使用すると、ブラウザBot判定を消せるらしい。
+        <p>ので実際やってみると、データの取得に成功。</p>
+        <p>JAVAで作りたかったのですが、このライブラリがPYTHONでしかできないっぽかったので</p>
+        <p>PYTHONで開発をすることにしました。</p>
+        <p>(PYTHONの最新バージョンで動かず、いろいろ試した結果、バージョン3.11で動いた。ﾃｺｽﾞﾗｾﾔｶﾞｯﾃ)</p>
+        <br>
+      
+        <h3>第二章 / データ抽出</h3>
+        <p>undetected‑chromedriverを使うと、その簡単さに衝撃を受けます。</p>
+        <p>PYTHONってこんなわかりやすいんだぁ...と驚いていました。</p>
+        <p>HTML文を取得できたら、次は<strong>抽出</strong>です。</p>
+        <p>chromedriverは生のHTML文を取得してくるので、</p>
+        <p>そこから欲しいデータを<strong>抽出</strong>する必要があります。</p>
+        <p>これも流石PYTHON、<strong>BeautifulSoup</strong>という便利なライブラリがあります。</p>
+        <p>生のHTML文をただの文字列としてではなく、HTMLオブジェクトの構造を扱う感覚でデータを取得できます。</p>
+        <br>
+        <p>たとえばこのコード、</p>
+        <p style="color:rgb(142, 153, 255)">id = [a.get("href")  for a in soup.select("a")]</p>
+        <p>このコード１つで、取得したページのaタグのリンク先のURLが配列ですべて取得できます。(ﾍﾞﾝﾘｽｷﾞ)</p>
+      
+        <h3>第三章 / DB保存</h3>
+        <p>次はデータ抽出したデータを、<strong>どこにどう保存するか</strong>ですね。</p>
+        <p>最初はJSONでやっていましたが、暗礁に乗り上げます。</p>
+        <p>それは、<strong>保存は便利だけど、取り出すとき複雑になる</strong>ということ。</p>
+        <p>目的はスロットのデータの分析ですから、</p>
+        <p>「この値がこれより大きい日をまとめたい。」、「店ごと、週ごと、月ごとに集計したい」</p>
+        <p>こうなったときに、<strong>SQLのSELECT文を使わないと、どんどん複雑になっていく</strong>んですよね。</p>
+        <p>でもローカルで使用するアプリにMySqlとかSqlServerみたいなDBもいろいろめんどくさいなぁと思っていたところ</p>
+        <p><strong>Sqlite</strong>を発見。</p>
+        <p>MySqlやSqlServerなどに必要な<strong>インストール作業や環境設定が必要ない！</strong></p>
+        <p>しかもこれPYTHONの標準ライブラリで、pipで取ってくる必要もないんです！(ｽｺﾞｽｷﾞ)</p>
+        <p>ただしSqlServerでいうSSMSのような、DBをGUIで管理するツールがないという欠点もあります(これあったらめっちゃ便利だと思う)</p>
+        <br>
+        <h3>第四章 / 分析・出力</h3>
+        <p>取得・抽出・保存ができたので、次はいよいよ<strong>分析</strong>です。</p>
+        <p>ここはPYTHONの得意分野、なんの苦戦もなく</p>
+        <p>箱ひげ図を作成する機能はあっという間に完成しました。</p>
+        <p>↓</p>
+        <img src="img/001_01.png" width="100%" height="auto"style="object-fit: cover; /* ← 一番よく使う */">
+        <p>エクセルで管理したい場合のために、csvファイル化する機能も搭載。</p>
+        <p>これもすぐできました。(PYTHONｽｹﾞｰ)</p>
+        <p>↓</p>
+        <img src="img/001_02.png" width="100%" height="auto"style="object-fit: cover; /* ← 一番よく使う */">
+
+        <h3>感想</h3>
+        <p><strong>PYTHONはまじで便利</strong></p>
+        <p>かたくなにJAVAで作ろうとしていましたが、本当に断念してよかったと思います。</p>
+        <p>こんだけいろいろな作業があっという間に作れちゃうのを体験して、</p>
+        <p>PYTHONの便利さに気づかされました。</p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ブログタイトル - All rights reserved.
+  </footer>
+  <script src="../article.js"></script>
+  <script>
+    fetch("../common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("../common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+      getTitle(1)
+  </script>
+</body>
+</html>
