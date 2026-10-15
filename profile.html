@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="common/style.css">
+</head>
+<body>
+  <header id = "header"></header>
+  <main class="container">
+    <article class="post">
+      <div class="post-content">
+        <p>独学でIT会社に就職</p>
+        <p>エンジニア歴３年</p>
+        <p>趣味でプログラミング、アプリ開発をしています。</p>
+        <p>「こういうの作ってほしい」、「こういうこと教えてほしい」などあれば、</p>
+        <p>やっていきたいです。</p>
+        <p>Twitter：<span onclick="location.href='https://x.com/YakiMoyashi'">x.com/YakiMoyashi</span></p>
+        <p>YouTube：<a onclick="location.href='https://www.youtube.com/@ヤキモヤシ_プログラミング開発'">youtube.com/@ヤキモヤシ_プログラミング開発</span></p>
+      </div>
+    </article>
+  </main>
+    <script>
+    fetch("common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("common/header.html") 
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML += html;
+      });
+    
+  </script>
+</body>
+</html>
