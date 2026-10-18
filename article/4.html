@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../common/style.css">
+</head>
+  <body>
+  <header id = "header"></header>
+  <main class="container">
+    <!-- 記事１ -->
+    <article class="post">
+      <div id="title"></div>
+      <div class="post-content">
+        <p>PYTHONの勉強のために作成したアプリケーションを公開してみました。</p>
+        <p>今回は、データを取得した後の、データ分析の方法について解説します。</p>
+        <p>①をまだ見ていない方は、先に使い方①を確認してください</p>
+        <p><strong>➤使い方①データ取得の方法はこちら</strong></p>
+        <br>
+        <h2>1.店舗を選択する</h2>
+        <p>台データダイアログを開きます。(一番最初に開く画面)</p>
+        <p>店舗と機種を指定すると、データを閲覧できます。</p>
+        <img src="img/4/1.png" width="75%" height="auto"style="object-fit: cover;">       
+        <p>店舗選択ボタンを押下します。</p>
+        <img src="img/4/2.png" width="50%" height="auto"style="object-fit: cover;">       
+        <p>目的の店舗をクリックし、選択ボタンを押下します。</p>
+        <img src="img/4/3.png" width="75%" height="auto"style="object-fit: cover;">       
+        <p>台データ画面の店舗名に値が入ったのが確認できます。</p>
+
+
+        <h2>2.機種を選択する</h2>
+        <p>機種選択ボタンを押下します。</p>
+        <img src="img/4/4.png" width="60%" height="auto"style="object-fit: cover;">
+        <p>目的の機種をクリックし、選択ボタンを押下します。</p>
+        <img src="img/4/5.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>台データ画面の機種名に値が入ったのが確認できます。</p>
+
+        <h2>2.データ閲覧</h2>
+        <p>検索ボタンを押下すると、日付順に結果が出力されます。</p>
+        <img src="img/4/6.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>台の列が、平均となっていて、その日の平均のデータを出力していることがわかります。</p>
+        <p>台ごとのデータを出力するには、平均をOFFにします。</p>
+        <img src="img/4/7.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>1155件出力しましたが、テーブルは1000件ごとに表示するので、それ以降のデータを見たいときはページリンクをクリックし、ページを更新する必要があります。</p>
+        <p>日付で絞りたいときは、テキストボックスに半角8桁の数字(yyyymmdd)を入力します。</p>
+        <img src="img/4/8.png" width="75%" height="auto"style="object-fit: cover;">
+        
+        <h2>3.データ分析</h2>
+        <p>曜日別の差枚の成績のグラフと、日付別の成績のグラフを作成しました。</p>
+        <p>それぞれ曜日別出玉グラフ作成ボタン、日付別グラフ作成ボタンをクリック</p>
+        <img src="img/4/9.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>↑曜日別成績</p>
+        <img src="img/4/10.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>↑日付別成績</p>
+        <p>２か月程度のデータでは、あまり意味がなさそうですね。</p>
+
+        <h2>4.CSV出力</h2>
+        <p>スロットのデータを解析したい人は、これが一番効率化したいのではないでしょうか。</p>
+        <p>CSVファイル作成ボタンを押下するとCSVファイルを作成し、csvをクリックすると、自動で開きます。</p>
+        <img src="img/4/11.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>エクセルが入っている人は、デフォルトでExcelが起動すると思います。</p>
+
+        <br>
+        <p>以上がこのアプリケーションの使い方になります。</p>
+        <p>スクレイピングを行う秒間隔、ブラウザ数にはDOS攻撃にならないよう注意が必要です。</p>
+        <p>作成者はスロットについてあまり詳しくないので、データの分析方法を知りません。</p>
+        <p>「この列のグラフを作る機能をつけ足してくれ！」などの要望あれば、なるべくアップデートしていきたいと思っています。</p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ブログタイトル - All rights reserved.
+  </footer>
+  <script src="../article.js"></script>
+  <script>
+    fetch("../common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("../common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+      getTitle(4)
+  </script>
+</body>
+</html>
