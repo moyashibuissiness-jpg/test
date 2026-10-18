@@ -18,29 +18,15 @@
     fetch("common/head.html")
       .then(res => res.text())
       .then(html => {
-        document.getElementById("head").innerHTML += html;
+        document.getElementById("head").innerHTML += html;    
+        fetch("common/header.html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("header").innerHTML = html;    
+            category = getCategory()
+            getAllTitle(category)
+          });
       });
-
-    fetch("common/header.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("header").innerHTML = html;
-      });
-      
-    for(i = 0; i < articles.length;i++){
-      str = ""
-      for(j = 0;j < articles[i].category.length;j++){
-        if(j!=0)str += "・"
-        str += "<a href='../profile.html'>"+articles[i].category[j]+"</a>"
-      }
-      document.getElementById("main").innerHTML += ""+
-        " <article class='post'>"+
-        "  <h2 class='post-title link' onclick=\"location.href='article/"+articles[i].num +".html' \">"+ articles[i].title +"</h2>"+
-        "  <div class='post-meta'>投稿日: "+ articles[i].date +" ｜ カテゴリ: "+
-          str+
-        "  </div>"+
-        " </article>"
-    }
   </script>
 </body>
 </html>
