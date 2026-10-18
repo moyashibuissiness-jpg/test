@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="common/style.css">
+</head>
+<body>
+  <header id = "header"></header>
+  <main class="container">
+    <article class="post">
+      <div class="post-content">
+        【取得する情報】<br>
+        当サイトでは以下の情報を取得する場合があります。<br>
+        アクセス解析ツールによる Cookie・IP アドレス・閲覧履歴<br>
+        広告配信（Google AdSense）による Cookie 情報<br><br>
+        【利用目的】  <br>
+        取得した情報は以下の目的で利用します。<br>
+        お問い合わせへの回答<br>
+        サイト改善のためのアクセス解析<br>
+        広告配信の最適化（パーソナライズド広告）<br><br>
+
+        【第三者提供】 <br>
+        当サイトは、法令に基づく場合を除き、本人の同意なく個人情報を第三者に提供しません。<br>
+        ただし、Google AdSense・Google Analytics などの外部サービス利用に伴い、Cookie 情報が第三者に提供される場合があります。<br><br>
+
+        【Cookie・広告・アクセス解析について】<br> 
+        当サイトでは以下のサービスを利用しています。<br>
+        Google AdSense<br>
+        Google Analytics<br>
+        これらのサービスは Cookie を使用してデータを収集します。<br>
+        詳細は Google のプライバシーポリシーをご確認ください。<br>
+        <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a><br><br>
+
+        【安全管理措置】<br>
+        当サイトは、個人情報の漏洩・紛失・改ざんを防止するため、SSL による暗号化など適切な安全管理措置を講じています。<br><br>
+        
+        【開示・訂正・利用停止の請求】  <br>
+        取得した個人情報の開示・訂正・利用停止をご希望の場合は、メールにてご連絡ください。<br>
+        本人確認の上、速やかに対応いたします。<br><br>
+        
+        【お問い合わせ窓口】 <br>
+        moyashibuissiness@gmail.com<br><br>
+
+        【制定日】  
+        2026年10月18日
+      </div>
+    </article>
+  </main>
+  <script>
+    fetch("common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML += html;
+      });
+    
+  </script>
+</body>
+</html>
