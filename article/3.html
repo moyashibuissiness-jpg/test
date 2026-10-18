@@ -11,22 +11,103 @@
     <article class="post">
       <div id="title"></div>
       <div class="post-content">
+        <p>今回は、試しに「楽園 池袋店」の「ニューキングハナハナV-30」のデータを分析していこうと思います。</p>
+
         <h2>1.まずはダウンロード</h2>
         <p>こちらからダウンロードしてください。</p>
         <p>サイズは60Mくらいです。</p>    
         <p>アプリケーションはPYTHONで動きますが、</p>
         <p><strong>PYTHONやライブラリのインストールや環境設定は必要ありません。</strong></p>
         <p>すべて内包してあります。</p>
+        <p><strong class="link" onclick="location.href='https://github.com/moyashibuissiness-jpg/test/releases/download/1.0.0/DataAnalyzer.exe'">➤ダウンロード</strong></p>
         <br>
-        <h2>2.</h2>
+        <h2>2.起動する</h2>
+        <p>Exeファイルを開くと、開始画面に映ります。</p>
+        <p>開始ボタンを押下してください。</p>
+        <img src="img/3/1.png" width="50%" height="auto"style="object-fit: cover;">       
+        <p>台データを見るダイアログが開きます。</p>
+        <img src="img/3/2.png" width="75%" height="auto"style="object-fit: cover;">
+        <br>
 
+
+        <h2>3.店舗情報を取得</h2>
+        <p>まず、店の情報を取得します。</p>
+        <p>店舗選択ボタンを押下</p>
+        <img src="img/3/3.png" width="60%" height="auto"style="object-fit: cover;">
+        <p>店舗選択画面が開きます。</p>
+        <p>さらに、店舗一覧取得ボタンを押下します。</p>
+        <img src="img/3/4.png" width="50%" height="auto"style="object-fit: cover;">
+        <p>この画面で、店舗を取得していきます。</p>
+        <p>今回は、「楽園 池袋店」のデータを取得したいので、「東京都」をクリックし、取得ボタンを押下します。</p>
+        <img src="img/3/5.png" width="50%" height="auto"style="object-fit: cover;">
+        <p>数秒かかった後、247店舗の情報を取得しました。</p>
+        <img src="img/3/6.png" width="60%" height="auto"style="object-fit: cover;">
+        <p>店舗取得ダイアログを閉じ、一個前の店舗選択ダイアログに戻ります。</p>
+        <p>都道府県を「東京都」にし、「日付取得済みのみ表示」「機種取得済みのみ表示」をOFFにしておきます。</p>
+        <p>＊この２つについては後で説明します。</p>
+        <p>検索ボタンを押下します。</p>
+        <img src="img/3/7.png" width="60%" height="auto"style="object-fit: cover;">
+        <p>店舗情報が取得されていることが確認できます。</p>
+
+
+        <h2>4.日付情報を取得する</h2>
+        <p>店舗一覧のテーブルの中で、データを取得したい店舗をダブルクリックします。</p>
+        <p>すると、機種選択画面が開きます。</p>
+        <img src="img/3/8.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>そこから機種データ最新化ボタンを押下します。</p>
+        <p>すると、機種取得画面が開きます。</p>
+        <img src="img/3/9.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>そこからさらに、日付データ最新化ボタンを押下します。</p>
+        <p>すると日付取得画面が開きます。</p>
+        <img src="img/3/10.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>こちらで、その店舗のデータがみんレポに挙げられている日にちをすべて取得します。</p>
+        <p>みんレポは毎日データが掲載されているわけではないので、その店舗のデータが掲載されている日付と、その日付と結びつく
+        URL用のIDを取得します。</p>
+        <p>取得ボタンを押下すると、GoogleChromeが２回起動します。</p>
+        <p>１回目はページ数取得のため、２回目はページ数分の日付のデータを取得するためです</p>
+        <img src="img/3/11.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>処理が終了すると、ブラウザが自動で閉じ、結果が格納されます。</p>
+        <p>上のほうを見ると、こちらの店舗は2026/10/16日まで、1668日分掲載されているということがわかります。</p>
+        <p>＊列をダブルクリックすると、その日付のページが自動的に開く機能もあります。</p>
+        <p>日付取得ダイアログを閉じ、機種取得画面に戻ります。</p>
         <br>
-      
-        <h2>3.店舗取得一覧テーブルから店舗一覧を取得しよう</h2>
-        <img src="img/003_01.png" width="50%" height="auto"style="object-fit: cover; /* ← 一番よく使う */">
-        <p>店舗一覧取得ボタンを押下</p>
-        <img>
-        <br>
+
+        <h2>5.機種情報を取得する</h2>
+        <p>先ほどの処理で、データを取得したい店舗の、データが掲載してある日付の一覧を取得できたので、</p>
+        <p>今度は、その日付になんの機種のデータがあるのかを取得します。</p>
+        <p>スレッドの数　とは、起動するブラウザの数です。</p>
+        <p>秒間隔　とは、ページを更新する間隔の秒数です。</p>
+        <p>ブラウザ数が多いほど、秒間隔が短いほど、データを取得するスピードが速くなります。</p>
+        <p>注意：</p>
+        <p>大量のアクセスを行い、サーバーに負担をかけるとDOS攻撃になる場合があります！</p>
+        <p>秒間隔を5秒で指定しておくことをお勧めします。</p>
+        <img src="img/3/12.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>取得ボタンを押下すると、指定したブラウザ数起動し、指定した秒間隔でページを更新します。</p>
+        <p>すべての日付の機種を取得する必要はありません。</p>
+        <p>一年程度の機種データを取得したいと思ったら、ブラウザの日付を見て、中止ボタンを押下して途中で止めてしまっても大丈夫です。</p>
+        <p>中止したまでのデータが、格納されます。</p>
+        <p>今回は２月ほどページを更新したところで、中止ボタンを押下します。</p>
+        <img src="img/3/13.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>中止ボタンを押下すると、ブラウザが自動で閉じ、データが格納されます。</p>
+        <p>日付の隣に、その日の機種数が格納されたのがわかります。(バラエティ/１台機種は取得しません)</p>
+        <p>機種取得ダイアログを閉じ、機種選択画面に戻ります。</p>
+
+        <h2>6.台のデータを取得する</h2>
+        <p>いよいよ台のデータを取得していきます。</p>
+        <img src="img/3/14.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>取得したい機種をダブルクリックします。</p>
+        <p>今回は、「ニューキングハナハナV-30」にします。</p>
+        <img src="img/3/15.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>さきほどと同じように、スレッド数と秒間隔をしていします。</p>
+        <img src="img/3/16.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>処理が終了すると、ブラウザが自動で閉じ、結果が格納されます。</p>
+        <p>その日付のデータの台数が表示されますが、「平均」の列も含めた数字となっています。</p>
+        <img src="img/3/17.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>＊15台＋平均</p>
+
+        <p>データを取得するという過程は、これにて終了になります。</p>
+        <p>データを閲覧・分析する過程は、こちら</p>
+        <p><strong class="link" onclick="location.href='4.html'">➤ダウンロード</strong></p>
       </div>
     </article>
   </main>
