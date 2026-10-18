@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head id = "head">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../common/style.css">
+</head>
+  <body>
+  <header id = "header"></header>
+  <main class="container">
+    <!-- 記事１ -->
+    <article class="post">
+      <div id="title"></div>
+      <div class="post-content">
+        <p>このブログのように、自分のドメインを取得して、</p>
+        <p>HTMLで作られた静的ウェブサイトを１円で公開する方法をここに記しておきます。</p>
+        <p>なぜ１円？となりますよね。</p>
+        <p>無料ではないんですよ。</p>
+        <p>自分はこれ闇深い理由があると断言します。</p>
+        <p>自分は一回引っかかってしまい、無駄な機能にお金を払わされてしまいました(ﾕﾙｾﾅｲ‼)</p>
+        <p>少しでも間違うと、お金を取られてしまいますので要注意！</p>
+        <h2>1.ドメインを取得する</h2>
+        <p>まず、お名前ドットコムでドメインを取得します。</p>
+        <img src="img/6/1.png" width="75%" height="auto"style="object-fit: cover;">
+        <img src="img/6/2.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>1円のドメインを選択したら、申込内容確認画面まで進めてください。</p>
+        <img src="img/6/5.png" width="45%" height="auto"style="object-fit: cover;">
+        <p>最初のトラップはここ！</p>
+        <p>この画面、よく見ていただくと、合計金額１円と書かれていますが、</p>
+        <img src="img/6/4.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>ドメイン以外にデフォルトでなぞのサービスが入っています。</p>
+        <p>AIホームページパック？0円と書いてありますが、</p>
+        <p>よく見ると翌月以降2,855円</p>
+        <p>ダークパターンすぎるあまりに姑息すぎる手口</p>
+        <p>実はお名前ドットコムはこのようなずる賢いやり口で知られており、</p>
+        <p>数年前、XがTwitterだったころ、ある方が是正しようと呼びかけを行ったことがあり、バズったことがありました。</p>
+        <p>消費者庁に報告したようですが、いまだ改善されている様子はありません...(ｱﾘｴﾅｲ)</p>
+        <p>知らない間にこのようなサービスに契約させるため、1円にしてクレカの登録をさせているとしか思えませんね！</p>
+        <p>ここできちんといらないサービスを削除しておいてください。</p>
+        <p>この手口を乗り越えたら、一旦ドメインの取得まで完了してください。</p>
+        <h2>1.GithubPagesに登録する</h2>
+        <p>GithubPagesという、マイクロソフト運営のサービスにアカウントを作ります。</p>
+        <p>アカウントを作成したら、サイドメニューから、All repositoriesに移ります。</p>
+        <img src="img/6/6.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>次に、New repositoryをクリック</p>
+        <img src="img/6/7.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>Repository nameにサービスのなどを名前を付けておきます。</p>
+        <p>今回はblogにしておきます。</p>
+        <img src="img/6/8.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>Create repositoryをクリック</p>
+        <p>サイドメニューからAll repositories→My repositoriesに移ります。</p>
+        <img src="img/6/9.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>作成されていることが確認できますね。</p>
+        <p>サイドメニューからAll repositories→My repositories→作成したレポジトリをクリック</p>
+        <img src="img/6/10.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>最初開くと、この画面がでるのですが、本来この画面でファイルを追加できるはずなんです。</p>
+        <p>ですがそのような機能がないページが表示されていて、</p>
+        <p>AIに聞いても、解決方法がわかってないっぽいので、</p>       
+        <p>自分なりの解決方法で突破します。</p> 
+        <p>一度、Create a codespaceをクリックし、もとの画面に戻ります。</p>
+        <img src="img/6/11.png" width="30%" height="auto"style="object-fit: cover;">
+        <img src="img/6/12.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>↑ここまで来たら、戻る</p>
+        <p>するとこの画面が表示されます。</p>
+        <img src="img/6/13.png" width="100%" height="auto"style="object-fit: cover;">
+        <p>Add File→Create new fileをクリック</p>
+        <p>こちらでindex.htmlを作成し、HTML文を書いておきます。</p>
+        <p>Commit Changesをクリック</p>
+        <img src="img/6/14.png" width="100%" height="auto"style="object-fit: cover;">
+        <img src="img/6/15.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>My repositories→作成したレポジトリをクリック→上のメニューのSettingをクリック</p>
+        <img src="img/6/17.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>横のPagesをクリック</p>
+        <img src="img/6/18.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>BrachをMainにしてクリック</p>
+        <img src="img/6/20.png" width="35%" height="auto"style="object-fit: cover;"><br>
+        <p>するとPagesの一番上に、このような部分が出てくると思うので、Visit siteをクリック(反映に時間かかるかも)</p>
+        <img src="img/6/21.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>すると先ほどのindex.htmlが表示されます。</p>
+        <img src="img/6/22.png" width="35%" height="auto"style="object-fit: cover;">
+        <h2>お名前ドットコムのDNSレコード設定</h2>
+        <p>お名前ドットコムのサイドメニューから、ネームサーバー/DNS→ドメインDNS設定に移る</p>
+        <img src="img/6/23.png" width="35%" height="auto"style="object-fit: cover;"><br>
+        <img src="img/6/24.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>ドメインDNSボタンをクリック</p>        
+        <img src="img/6/25.png" width="35%" height="auto"style="object-fit: cover;">
+        <p>DNSレコード設定をクリック</p>
+        <p>レコード追加をクリック</p>
+        <img src="img/6/26.png" width="75%" height="auto"style="object-fit: cover;">
+        <p>ここで、以下を追加してください。</p>
+        <img src="img/6/27.png" width="100%" height="auto"style="object-fit: cover;">
+        <p>ドメインをGithubPagesに向ける設定です。</p>
+        <p>上４行の数字はすべてこれと同じものを入れてください</p>
+        <p>5行目だけ、ホスト名がwww、TYPEがCNAMEなのと、VALUEが自分のGithubPagesのID+.github.ioになるようにしてください</p>
+        <p>自分の場合はmoyashibuissiness-jpg(ID) + .github.io</p>
+        <img src="img/6/28.png" width="100%" height="auto"style="object-fit: cover;">
+        <p>そして、確認画面へ進むボタンを押します。</p>
+        <p>ここでもう一度注意！</p>
+        <img src="img/6/29.png" width="100%" height="auto"style="object-fit: cover;">
+        <p>また同じ手口です！</p>
+        <p>注意してみていないと、気づかない間にいらないサービスに契約させられてしまいます(ｱﾌﾞﾅｲ)</p>
+        <p>ここは設定しないを選んでください</p>
+        <p>次の画面で、設定するを押して進んでください。</p>
+        <p>これで、お名前ドットコムの設定は終了です。</p>
+        <p>DNS設定はすぐには反映されません、24時間ほどかかることもあるそうです。</p>
+        <h2>GithubPagesのCustomDomain設定</h2>
+        <p>次はGithubpagesのほうでドメインを検索するとindex.htmlが開くように設定していきます。</p>
+        <p>この流れで進んでください</p>
+        <p>GithubPagesのサイドメニュー→All repositories→My repository → 作成したレポジトリ</p>
+        <p>上のメニューバーのSetting→横のPages</p>
+        <img src="img/6/30.png" width="100%" height="auto"style="object-fit: cover;">
+        <p>Custom domainに、自分のドメインを入力します。</p>
+        <p>Saveを押せば、すべての作業終了です。</p>
+        <p>お名前ドットコム側のDNSレコード設定が終わると、</p>
+        <p>GithubPagesが自動で紐づけてくれるので、それまで待ちます。</p>
+        <p>どちらの設定も終わっていれば、ドメインを検索するとindex.htmlが表示されます。</p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ブログタイトル - All rights reserved.
+  </footer>
+  <script src="../article.js"></script>
+  <script>
+    fetch("../common/head.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("head").innerHTML += html;
+      });
+
+    fetch("../common/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+      });
+
+      getTitle(6)
+  </script>
+</body>
+</html>
